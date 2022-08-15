@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* .fal{
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             background-color: blue;
+             height: 100vh;
+         } */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .first-content {
+        background: #5d4157;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #a8caba, #5d4157);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #a8caba, #5d4157);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        width: 100vw !important;
+        height: 100vh !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .text {
+        height: 100vh;
+        width: 100vw;
+      }
+
+      h1 {
+        padding-bottom: 30%;
+        text-align: center;
+        color: #780206;
+        /* fallback for old browsers */
+        color: -webkit-linear-gradient(to right, #061161, #780206);
+        /* Chrome 10-25, Safari 5.1-6 */
+        color: linear-gradient(to right, #061161, #780206);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+      .demo {
+        display: flex;
+        justify-content: center;
+      }
+
+      .demo span {
+        color: rgb(255, 255, 255);
+        padding: 2%;
+        font-size: 45px;
+        font-weight: bolder;
+        z-index: 36;
+      }
+
+      .demo .p-0 {
+        padding: 2% 0;
+      }
+
+      .ask {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .ask-input {
+        display: flex;
+        margin: 2%;
+      }
+      .drop-down {
+        background: #a8caba;
+        margin-left: 40%;
+      }
+
+      button {
+        width: 65px;
+        height: 45px;
+        outline: none;
+        border: 3px solid rgb(189, 178, 178);
+        overflow: hidden;
+        box-shadow: 0px 0px 5px rgb(209, 202, 202);
+        transition: 1s;
+        padding: 5px;
+        font-weight: 900;
+      }
+      button:hover {
+        background: rgb(255, 0, 0);
+      }
+      .ask-input ul li {
+        list-style: none;
+      }
+      .ask-input ul {
+        transition: 1s;
+        display: none;
+
+        width: 90px;
+      }
+      .ask-input ul li {
+        padding-top: 7%;
+        padding-left: 3%;
+        transition: 0.5s;
+      }
+      .ask-input ul li:hover {
+        background: #ff00ea;
+        width: 50px;
+      }
+      .start {
+        display: flex;
+        text-align: center;
+        color: antiquewhite;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 50%;
+      }
+      .ask-input input {
+        outline: none;
+        border: none;
+        width: 80px;
+        height: 75%;
+        text-align: center;
+        font-size: 50px;
+      }
+      .second_body {
+        display: flex;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 15%;
+        width: 100vw;
+        height: 100vh;
+        color: antiquewhite;
+        word-spacing: 20px;
+        font-weight: 900;
+        background: -webkit-linear-gradient(to right, #061161, #780206);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #061161, #780206);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+      #zero_one,
+      #zero_two,
+      #zero_three,
+      #zero_four {
+        display: none;
+      }
+      .moving {
+        /* height: 100vh;
+        width: 100vw; */
+
+        z-index: 1;
+        padding: 10%;
+        display: none;
+        color: aqua;
+        font-weight: 900;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .command {
+        padding-top: 20%;
+        display: none;
+        color: aqua;
+        font-weight: 900;
+        text-align: center;
+      }
+
+      #start_btn {
+        display: block;
+      }
+      #first_mama {
+        display: none;
+      }
+      #count {
+        animation-name: musaddik;
+        animation-timing-function: ease-in-out;
+        animation-duration: 5s;
+        animation-fill-mode: alternate;
+        animation-iteration-count: infinite;
+        color: rgb(255, 255, 255);
+        padding: 2%;
+        font-size: 45px;
+        font-weight: bolder;
+
+        /* @keyframes identifier {
+  0% { top: 0; left: 0; }
+  30% { top: 50px; }
+  68%, 72% { left: 50px; }
+  100% { top: 100px; left: 100%; }
+} */
+      }
+      @keyframes musaddik {
+        0% {
+          top: 100px;
+          left: 0px;
+          background: rgb(255, 0, 0);
+        }
+        25% {
+          top: 150px;
+          left: 100px;
+          background: rgb(69, 69, 255);
+        }
+        50% {
+          top: 100px;
+          left: 100px;
+          background: rgb(247, 255, 2);
+        }
+        75% {
+          top: 100px;
+          left: 0px;
+          background: rgb(102, 255, 102);
+        }
+        100% {
+          top: 0px;
+          left: 0px;
+          background: red;
+        }
+      }
+      header{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+     
+    
+      <div class="first-content" id="body_first">
+       
+          <div class="test">
+          <h1>Wellcom To My Watch</h1>
+           <header id="head_b">
+            <div class="demo">
+            <span id="zero_one">0</span>
+            <span class="p-0" id="hours">12</span>
+            <span>:</span>
+            <span id="zero_two">0</span>
+            <span class="p-0" id="minutes">00</span>
+            <span>:</span>
+            <span id="zero_three">0</span>
+            <span id="seconds">00</span>
+            <span>:</span>
+            <span id="zero_four">0</span>
+  
+            <span id="amorpm">PM</span>
+          </div>
+          <div class="moving"><span id="count">00</span></div>
+  
+          <div class="command" id="command">
+            <h3>Refresh this page , (if you want to changes something)</h3>
+          </div>
+        </header>
+          <div class="ask" id="ask">
+            <h3>Set time</h3>
+            <div class="ask-input">
+              <span
+                ><input
+                  type="number"
+                  id="hour_or"
+                  placeholder="12:"
+                  min="1"
+                  max="12"
+                  onclick="hour_on()"
+              /></span>
+              <span
+                ><input
+                  type="number"
+                  id="minute_or"
+                  placeholder="00"
+                  min="1"
+                  max="59"
+                  onclick="minute_on()"
+              /></span>
+              <span>
+                <div class="drop-down">
+                  <button type="submit" onclick="hover()" id="change_am_pm">
+                    PM/AM
+                  </button>
+                  <ul id="d-block">
+                    <li id="am">AM</li>
+                    <li id="pm">PM</li>
+                  </ul>
+                </div>
+              </span>
+            </div>
+          </div>
+          <div class="start" id="M_start">
+            <button id="start_btn" type="submit">Start</button>
+          </div>
+  
+          <!-- <div class="fal">
+      <input type="text" id="test" />
+      <input type="submit" value="submit" id="taz" />
+      <h1 id="in"></h1> -->
+        </div>
+      </div>
+  
+    
+    <div class="second_body" id="second_body">
+      <h2>
+        something error (please refresh this page and try again)......... <br />
+        <br />
+        <br />
+        command by musaddik hosen........................
+      </h2>
+    </div>
+
+    <script>
+      var hov = document.getElementById("d-block");
+      var am_pm = false;
+      var am = false;
+      var pm = false;
+      var a = "AM";
+      var p = "PM";
+      var h = 0;
+      var m = 0;
+      var mis_m = false;
+      var mis_h = false;
+      var hour_12 = 12;
+      var count_can = 0;
+      var s_can = 0;
+      var m_can = 0;
+      var h_can = 0;
+      var s = 0;
+      var start = false;
+      var count = 0;
+      var musaddik = "musaddik";
+      var sum_am = 0;
+      var sum_pm = 0;
+
+      function hour_on() {
+        mis_h = true;
+      }
+      function minute_on() {
+        mis_m = true;
+      }
+      function hover() {
+        hov.style.display = "block";
+      }
+      document.getElementById("am").onclick = function () {
+        am_pm = true;
+        hov.style.display = "none";
+        am = true;
+        document.getElementById("change_am_pm").innerHTML = a;
+        document.getElementById("amorpm").innerHTML = a;
+      };
+      document.getElementById("pm").onclick = function () {
+        am_pm = true;
+        hov.style.display = "none";
+        pm = true;
+        document.getElementById("change_am_pm").innerHTML = p;
+        document.getElementById("amorpm").innerHTML = p;
+      };
+
+      body_first = document.getElementById("body_first");
+      body_second = document.getElementById("second_body");
+
+      document.getElementById("start_btn").onclick = function () {
+        
+        document.getElementById("command").style.display = "block";
+        document.getElementById("ask").style.display = "none";
+        document.getElementById("start_btn").style.display = "none";
+        document.getElementById("head_b").style.display="block";
+        
+        h = parseInt(document.getElementById("hour_or").value);
+        m = parseInt(document.getElementById("minute_or").value);
+        document.getElementById("hours").innerHTML = h;
+        document.getElementById("minutes").innerHTML = m;
+       
+        document.getElementById("seconds").innerHTML = s;
+        document.getElementById("count").innerHTML = count;
+      
+        if (h > 12) {
+          body_first.style.display = "none";
+          body_second.style.display = "block";
+        } else if (h < 1) {
+          body_first.style.display = "none";
+          body_second.style.display = "block";
+        } else if (mis_h == false) {
+          body_first.style.display = "none";
+          body_second.style.display = "block";
+        } 
+        else if ( mis_m == false) {
+          body_first.style.display = "none";
+          body_second.style.display = "block";
+        } else if (m > 59) {
+          body_first.style.display = "none";
+          body_second.style.display = "block";
+        } else if (m < 1) {
+          body_first.style.display = "none";
+          body_second.style.display = "block";
+        } else if (am_pm == false) {
+          body_first.style.display = "none";
+          body_second.style.display = "block";
+        } else {
+          start = true;
+        }
+        watch();
+        logic();
+
+      };
+    
+      function watch() {
+        console;
+        if (start == true) {
+          count = count + 1;
+          document.getElementById("count").innerHTML = count;
+          setTimeout("watch()", 10);
+          if (count == 100) {
+            count = 0;
+            s = s + 1;
+            document.getElementById("seconds").innerHTML = s;
+            if (s == 60) {
+              s = 0;
+              document.getElementById("seconds").innerHTML = s;
+              m = m + 1;
+              console.log(m);
+              document.getElementById("minutes").innerHTML = m;
+              if (m == 60) {
+                m = 1;
+                document.getElementById("minutes").innerHTML = m;
+                h += 1;
+                document.getElementById("hours").innerHTML = h;
+              }
+              if (h == 12) {
+                if (am == true) {
+                  document.getElementById("amorpm").innerHTML = p;
+                } else if (pm == true) {
+                  document.getElementById("amorpm").innerHTML = a;
+                }
+              }
+
+              if (h == 13) {
+                h = 1;
+                document.getElementById("hours").innerHTML = h;
+              }
+            }
+          }
+          // if (s > 10) {
+          //   console.log(s);
+          //   document.getElementById("seconds").innerHTML = s;
+          //  var test_zero_three;
+          //   test_zero_three = document.querySelector("#zero_three");
+          //   test_zero_three.style.display = "block";
+          //   test_zero_three.style.background = "red";
+          //     }else{
+          //       document.getElementById("seconds").innerHTML = s;
+          //       test_zero_three.style.color = "blue";
+          //       test_zero_three.style.display = "none";
+          //     }
+          // if (h > 0 && h < 10) {
+          //   document.getElementById("hours").innerHTML = h;
+          //   var test_zero_one = document.getElementById("zero_one");
+          //   test_zero_one.style.display = "block";
+          //   test_zero_one.style.background = "red";
+          // } else {
+          //   document.getElementById("hours").innerHTML = h;
+          //   // test_zero_one.style.display = "none";
+          // }
+          // m =parseInt(document.getElementById("minute_or").value;
+          // if (m > 0 && m < 10) {
+          //   var test_zero_two = document.getElementById("zero_two");
+          //   test_zero_two.style.display = "block";
+          //   test_zero_two.style.background = "red";
+          //   m =parseInt(document.getElementById("minute_or").value;
+
+          //   document.getElementById("minutes").innerHTML = m;
+          // } else {
+          //   m =parseInt(document.getElementById("minute_or").value;
+          //   document.getElementById("minutes").innerHTML = m;
+          //   // test_zero_two.style.display = "none";
+          // }
+
+          // }
+        }
+      }
+
+      //   function logic() {
+      //     if (am == true) {
+      //       sum_am = h;
+      //       h_can=sum_am;
+      //     } else if (pm == true) {
+      //       sum_pm = 12 + h;
+      //       h_can=sum_pm;
+      //     }
+
+      //     count_can += 1;
+      //     setTimeout("logic()", 10);
+      //     m_can=m;
+      //     if(m_can==60){
+      //       m_can=0;
+      //       h_can+=1;
+      //       if (h_can==1) {
+      //         document.getElementById("amorpm").innerHTML="musaddik";
+      //       }
+      //       if(h_can==24){
+      //         document.getElementById("amorpm").innerHTML=a;
+      //       }
+      //     }
+      //   }
+      //  logic();
+
+      // document.getElementById("taz").onclick =function(){
+      //   var my= document.getElementById("test").value;
+
+      //   console);
+      //   document.getElementById('in').innerHTML=my;
+      // }
+    </script>
+  </body>
+</html>
