@@ -19,6 +19,7 @@
         padding: 0;
       }
       .first-content {
+        padding-top:5% ;
         background: #5d4157;
         /* fallback for old browsers */
         background: -webkit-linear-gradient(to right, #a8caba, #5d4157);
@@ -36,12 +37,20 @@
       .text {
         height: 100vh;
         width: 100vw;
+       
+      }
+      #welcome{
+        position: relative;
+        z-index: 100;
       }
 
       h1 {
         padding-bottom: 30%;
+       
         text-align: center;
         color: #780206;
+       
+        z-index: 10;
         /* fallback for old browsers */
         color: -webkit-linear-gradient(to right, #061161, #780206);
         /* Chrome 10-25, Safari 5.1-6 */
@@ -52,6 +61,7 @@
       .demo {
         display: flex;
         justify-content: center;
+       
       }
 
       .demo span {
@@ -59,7 +69,7 @@
         padding: 2%;
         font-size: 45px;
         font-weight: bolder;
-        z-index: 36;
+       
       }
 
       .demo .p-0 {
@@ -71,6 +81,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        z-index: 100;
+        position: relative;
       }
       .ask-input {
         display: flex;
@@ -91,6 +103,7 @@
         transition: 1s;
         padding: 5px;
         font-weight: 900;
+        z-index: 100;
       }
       button:hover {
         background: rgb(255, 0, 0);
@@ -130,7 +143,11 @@
         font-size: 50px;
       }
       .second_body {
+        padding-top:5% ;
         display: flex;
+        
+        position: absolute;
+        z-index: 10000;
         display: none;
         justify-content: center;
         align-items: center;
@@ -180,10 +197,99 @@
       #first_mama {
         display: none;
       }
+      #name_d {
+        animation-name: h-musaddik;
+        animation-timing-function: ease-in-out;
+        animation-duration: 10s;
+        animation-fill-mode: alternate;
+        animation-iteration-count: infinite;
+        color: rgb(255, 255, 255);
+        padding: 1%;
+        font-size: 20px;
+        font-weight: bolder;
+        position: absolute;
+        background: black;
+       
+        border-radius: 15px;
+        box-shadow:  rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 0, 187) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px ;
+
+        font-weight: 900;
+      }
+      
+
+      @keyframes h-musaddik {
+        0% {
+          top: 0%;
+          left: 50%;
+          color: rgb(255, 0, 0);
+          background: rgb(58, 41, 41);
+          
+        }
+        10% {
+          top: 10%;
+          left: 20%;
+          color: rgb(69, 69, 255);
+          background: rgb(255, 0, 0);
+        }
+        20% {
+          top: 20%;
+          left: 40%;
+          color: rgb(247, 255, 2);
+          background: rgb(0, 255, 30);
+        }
+        30% {
+          top: 30%;
+          left: 50%;
+          color: rgb(102, 255, 102);
+          background: rgb(255, 217, 0);
+        }
+        40% {
+          top: 40%;
+          left: 40%;
+          color: rgb(255, 41, 251);
+          background: rgb(255, 0, 89);
+        }
+        50% {
+          top: 50%;
+          left: 20%;
+          color: rgb(40, 255, 241);
+          background: rgb(9, 100, 96);
+        }
+        60% {
+          top: 60%;
+          left: 40%;
+          color: rgb(255, 128, 0);
+          background: rgb(255, 254, 254);
+        }
+        70% {
+          top: 70%;
+          left: 25%;
+          color: rgb(255, 0, 93);
+          background: rgb(255, 102, 0);
+        }
+        80% {
+          top: 80%;
+          left: 40%;
+          color: rgb(68, 252, 114);
+          background: rgb(217, 0, 255);
+        }
+        90% {
+          top: 40%;
+          left: 30%;
+          color: rgb(251, 158, 104);
+          background: rgb(29, 138, 34);
+        }
+        100% {
+          top: 20%;
+          left: 40%;
+          color: rgb(123, 61, 101);
+          background: blue;
+        }
+      }
       #count {
         animation-name: musaddik;
         animation-timing-function: ease-in-out;
-        animation-duration: 5s;
+        animation-duration: 10s;
         animation-fill-mode: alternate;
         animation-iteration-count: infinite;
         color: rgb(255, 255, 255);
@@ -225,20 +331,23 @@
           background: red;
         }
       }
-      header{
+      header {
         display: none;
+        position: relative;
       }
     </style>
   </head>
   <body>
-     
-    
-      <div class="first-content" id="body_first">
-       
-          <div class="test">
-          <h1> <span id="count">MD.MUSADDIK HOSEN</span><br/><br/>Welcome To My Watch</h1>
-           <header id="head_b">
-            <div class="demo">
+    <div class="first-content" id="body_first">
+      <div class="test">
+        <h1>
+          <br /><span id="welcome"> Welcome To My Watch</span> <br /><span id="name_d"
+            >MD.MUSADDIK HOSEN</span
+          >
+        </h1>
+
+        <header id="head_b">
+          <div class="demo">
             <span id="zero_one">0</span>
             <span class="p-0" id="hours">12</span>
             <span>:</span>
@@ -249,62 +358,66 @@
             <span id="seconds">00</span>
             <span>:</span>
             <span id="zero_four">0</span>
-  
+
             <span id="amorpm">PM</span>
           </div>
           <div class="moving"><span id="count">00</span></div>
-  
+
           <div class="command" id="command">
             <h3>Refresh this page , (if you want to changes something)</h3>
           </div>
         </header>
-          <div class="ask" id="ask">
-            <h3>Set time</h3>
-            <div class="ask-input">
-              <span
-                ><input
-                  type="number"
-                  id="hour_or"
-                  placeholder="12:"
-                  min="1"
-                  max="12"
-                  onclick="hour_on()"
-              /></span>
-              <span
-                ><input
-                  type="number"
-                  id="minute_or"
-                  placeholder="00"
-                  min="1"
-                  max="59"
-                  onclick="minute_on()"
-              /></span>
-              <span>
-                <div class="drop-down">
-                  <button type="submit" onclick="hover()" id="change_am_pm">
-                    PM/AM
-                  </button>
-                  <ul id="d-block">
-                    <li id="am">AM</li>
-                    <li id="pm">PM</li>
-                  </ul>
-                </div>
-              </span>
-            </div>
+        <div class="ask" id="ask">
+          <h3>Set time</h3>
+          <div class="ask-input">
+            <span
+              ><input
+                type="number"
+                id="hour_or"
+                placeholder="12:"
+                min="1"
+                max="12"
+                onclick="hour_on()"
+            /></span>
+            <span
+              ><input
+                type="number"
+                id="minute_or"
+                placeholder="00"
+                min="1"
+                max="59"
+                onclick="minute_on()"
+            /></span>
+            <span>
+              <div class="drop-down">
+                <button type="submit" onclick="hover()" id="change_am_pm">
+                  PM/AM
+                </button>
+                <ul id="d-block">
+                  <li id="am">AM</li>
+                  <li id="pm">PM</li>
+                </ul>
+              </div>
+            </span>
           </div>
-          <div class="start" id="M_start">
-            <button id="start_btn" type="submit">Start</button>
-          </div>
-  
-          <!-- <div class="fal">
+        </div>
+        <div class="start" id="M_start">
+          <button id="start_btn" type="submit">Start</button>
+        </div>
+
+        <!-- <div class="fal">
       <input type="text" id="test" />
       <input type="submit" value="submit" id="taz" />
       <h1 id="in"></h1> -->
-        </div>
       </div>
-  
-    
+    </div>
+
     <div class="second_body" id="second_body">
+      <h1>
+        <br />Welcome To My Watch <br /><span id="name_d"
+          >MD.MUSADDIK HOSEN</span
+        >
+      </h1>
       <h2>
         something error (please refresh this page and try again)......... <br />
         <br />
@@ -364,20 +477,19 @@
       body_second = document.getElementById("second_body");
 
       document.getElementById("start_btn").onclick = function () {
-        
         document.getElementById("command").style.display = "block";
         document.getElementById("ask").style.display = "none";
         document.getElementById("start_btn").style.display = "none";
-        document.getElementById("head_b").style.display="block";
-        
+        document.getElementById("head_b").style.display = "block";
+
         h = parseInt(document.getElementById("hour_or").value);
         m = parseInt(document.getElementById("minute_or").value);
         document.getElementById("hours").innerHTML = h;
         document.getElementById("minutes").innerHTML = m;
-       
+
         document.getElementById("seconds").innerHTML = s;
         document.getElementById("count").innerHTML = count;
-      
+
         if (h > 12) {
           body_first.style.display = "none";
           body_second.style.display = "block";
@@ -387,8 +499,7 @@
         } else if (mis_h == false) {
           body_first.style.display = "none";
           body_second.style.display = "block";
-        } 
-        else if ( mis_m == false) {
+        } else if (mis_m == false) {
           body_first.style.display = "none";
           body_second.style.display = "block";
         } else if (m > 59) {
@@ -405,9 +516,8 @@
         }
         watch();
         logic();
-
       };
-    
+
       function watch() {
         console;
         if (start == true) {
@@ -517,3 +627,4 @@
     </script>
   </body>
 </html>
+
